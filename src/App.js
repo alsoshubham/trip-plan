@@ -11,8 +11,21 @@ const App = () => {
     setTours(newTours);
   }
 
+  if(tours.length ===0){
+    return(
+    <div className="refresh">
+      <h2>
+        No Tours Left
+      </h2>
+      <button className="button-white" onClick={()=> setTours(data)}>
+        Reset
+      </button>
+    </div>
+    );
+  }
+
   return(
-    <div>
+    <div className="app">
       <h2>trip planner</h2>
       <Tours tours={tours} removeTour={removeTour}/>
     </div>
